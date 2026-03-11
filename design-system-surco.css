@@ -1,3 +1,5 @@
+/* Design System Surco - Base CSS */
+
 :root{
   --cp:#00C9A7;--cpd:#00A88A;--cpl:#E0FAF5;
   --cs:#003D6B;--csd:#002749;--csl:#E6EEF5;
@@ -39,12 +41,15 @@ a{color:var(--cpd);text-decoration:none}
 .nav-links a{color:rgba(255,255,255,.55);font-size:var(--txs);padding:6px var(--s3);border-radius:var(--rsm);white-space:nowrap;transition:.15s}
 .nav-links a:hover{color:var(--wh);background:rgba(255,255,255,.1)}
 .layout{display:flex;align-items:flex-start}
-.sidebar{width:220px;height:calc(100vh - 60px);background:var(--wh);border-right:1px solid var(--g3);padding:var(--s6) 0;position:sticky;top:60px;align-self:flex-start;overflow-y:auto;flex-shrink:0}
-.sb-grp{margin-bottom:var(--s5)}
-.sb-lbl{font-size:var(--txs);font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--g5);padding:0 var(--s5) var(--s2)}
-.sidebar a{display:block;color:var(--g7);font-size:var(--tsm);padding:var(--s2) var(--s5);transition:background .15s,color .15s,border-color .15s;border-left:2px solid transparent}
-.sidebar a:hover{background:var(--cpl);color:var(--cpd);border-left-color:var(--cp)}
+.sidebar{width:220px;height:calc(100vh - 60px);background:var(--wh);border-right:1px solid var(--g3);padding:var(--s4) 0;position:sticky;top:60px;align-self:flex-start;overflow-y:auto;flex-shrink:0}
+.sb-grp{margin-bottom:var(--s4)}
+.sb-lbl{font-size:var(--txs);font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--g5);padding:var(--s3) var(--s4) var(--s1)}
+.sidebar a{display:flex;align-items:center;gap:var(--s3);color:var(--g7);font-size:var(--tsm);padding:var(--s2) var(--s4);transition:background .15s,color .15s;border-left:3px solid transparent;font-weight:500}
+.sidebar a:hover{background:var(--g1);color:var(--g9)}
 .sidebar a.active{background:var(--cpl);color:var(--cpd);border-left-color:var(--cp);font-weight:600}
+.sidebar a i{width:18px;height:18px;stroke-width:2;color:var(--g5);transition:.15s;flex-shrink:0}
+.sidebar a.active i{color:var(--cpd)}
+.sidebar a .sl-badge{margin-left:auto;background:var(--cd);color:var(--wh);font-size:10px;font-weight:700;padding:1px 6px;border-radius:var(--rfl)}
 .main{flex:1;padding:var(--s10);max-width:1100px;min-width:0;overflow:visible}
 .sec{margin-bottom:var(--s12)}
 .sec-title{display:flex;align-items:center;gap:var(--s3);font-size:var(--txl);font-weight:700;color:var(--cs);padding-bottom:var(--s3);border-bottom:2px solid var(--cp);margin-bottom:var(--s6)}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind + Surco DS Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#00C9A7',
+              dark: '#00A88A',
+              light: '#E0FAF5',
+            },
+            secondary: {
+              DEFAULT: '#003D6B',
+              dark: '#002749',
+              light: '#E6EEF5',
+            },
+            accent: '#F5A623',
+            danger: '#E03E3E',
+            warning: '#F5A623',
+            success: '#27AE60',
+            info: '#2F80ED',
+            gray: {
+              900: '#1A1A2E',
+              800: '#2D2D44',
+              700: '#4A4A6A',
+              500: '#8888AA',
+              300: '#D0D5E8',
+              100: '#F4F6FB',
+            },
+          },
+          fontFamily: {
+            sans: ['Segoe UI', 'system-ui', 'sans-serif'],
+          },
+          spacing: {
+            's1': '4px', 's2': '8px', 's3': '12px', 's4': '16px', 's5': '20px', 's6': '24px', 's8': '32px', 's10': '40px', 's12': '48px',
+          },
+          borderRadius: {
+            'sm': '4px', 'md': '8px', 'lg': '12px', 'xl': '16px', 'full': '9999px',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 font-sans p-s10">
+
+  <div class="max-w-4xl mx-auto space-y-s8">
+    
+    <header class="text-center">
+      <h1 class="text-3xl font-bold text-secondary">Tailwind + Surco DS</h1>
+      <p class="text-gray-500 mt-s2">Adaptación del sistema de diseño para escalabilidad.</p>
+    </header>
+
+    <section class="bg-white p-s6 rounded-xl shadow-md space-y-s4">
+      <h2 class="text-xl font-bold text-secondary border-b-2 border-primary pb-s2">Botones con Tailwind</h2>
+      <div class="flex flex-wrap gap-s4">
+        <button class="bg-primary hover:bg-primary-dark text-white px-s5 py-s3 rounded-md font-semibold transition-all shadow-sm active:scale-95">
+          Primary Tailwind
+        </button>
+        <button class="bg-secondary hover:bg-secondary-dark text-white px-s5 py-s3 rounded-md font-semibold transition-all active:scale-95">
+          Secondary Tailwind
+        </button>
+        <button class="border-2 border-primary text-primary-dark hover:bg-primary-light px-s5 py-s3 rounded-md font-semibold transition-all">
+          Outline Tailwind
+        </button>
+      </div>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-s6">
+      <div class="bg-white p-s6 rounded-xl shadow-md border-l-4 border-danger">
+        <h3 class="text-lg font-bold text-gray-900">Alerta Roja</h3>
+        <p class="text-sm text-gray-700 mt-s1">Esta tarjeta usa utilidades de Tailwind para bordes y sombras.</p>
+      </div>
+      <div class="bg-white p-s6 rounded-xl shadow-md border-l-4 border-success">
+        <h3 class="text-lg font-bold text-gray-900">Estado Exitoso</h3>
+        <p class="text-sm text-gray-700 mt-s1">Combinando `border-success` con tokens personalizados.</p>
+      </div>
+    </section>
+
+    <footer class="text-center text-gray-500 text-xs mt-s12">
+      Municipalidad de Surco &copy; 2026
+    </footer>
+
+  </div>
+
+</body>
+</html>
