@@ -35,17 +35,18 @@
     </div>
 
     <div class="nav-links">
-      <a href="#design-tokens">Design Tokens</a>
-      <a href="#atomic-components">Atomic Components</a>
-      <a href="#composite-components">Composite Components</a>
-      <a href="#patterns">Patterns</a>
-      <a href="#layouts">Layouts</a>
+      <a href="#design-tokens">Tokens de Diseño</a>
+      <a href="#atomic-components">Componentes Atómicos</a>
+      <a href="#composite-components">Componentes Compuestos</a>
+      <a href="#patterns">Patrones</a>
+      <a href="#layouts">Maquetaciones</a>
+      <a href="#cal">Calendario</a>
     </div>
   </nav>
   <div class="layout">
     <aside class="sidebar">
       <div class="sb-grp">
-        <div class="sb-lbl">Design Tokens</div>
+        <div class="sb-lbl">Tokens de Diseño</div>
         <a href="#col"><i data-lucide="palette"></i>Colores</a>
         <a href="#tip"><i data-lucide="type"></i>Tipografía</a>
         <a href="#esp"><i data-lucide="ruler"></i>Espaciado</a>
@@ -53,7 +54,7 @@
         <a href="#tkn"><i data-lucide="code-2"></i>CSS Tokens</a>
       </div>
       <div class="sb-grp">
-        <div class="sb-lbl">Atomic Components</div>
+        <div class="sb-lbl">Componentes Atómicos</div>
         <a href="#bot"><i data-lucide="mouse-pointer-click"></i>Botones</a>
         <a href="#bdg"><i data-lucide="tag"></i>Badges</a>
         <a href="#avt"><i data-lucide="circle-user"></i>Avatares</a>
@@ -62,27 +63,27 @@
         <a href="#tgl"><i data-lucide="toggle-right"></i>Toggle</a>
       </div>
       <div class="sb-grp">
-        <div class="sb-lbl">Composite Components</div>
+        <div class="sb-lbl">Componentes Compuestos</div>
         <a href="#crd"><i data-lucide="square"></i>Cards</a>
         <a href="#tbl"><i data-lucide="table-2"></i>Tablas</a>
         <a href="#tab"><i data-lucide="panel-top"></i>Tabs</a>
         <a href="#acc"><i data-lucide="chevrons-up-down"></i>Accordion</a>
         <a href="#bcr"><i data-lucide="git-fork"></i>Breadcrumb</a>
-        <a href="#pgn"><i data-lucide="ellipsis"></i>Pagination</a>
+        <a href="#pgn"><i data-lucide="ellipsis"></i>Paginación</a>
         <a href="#mod"><i data-lucide="app-window"></i>Modales</a>
         <a href="#ttp"><i data-lucide="message-circle"></i>Tooltip</a>
         <a href="#tst"><i data-lucide="bell"></i>Toasts</a>
         <a href="#fdb"><i data-lucide="loader"></i>Feedback</a>
       </div>
       <div class="sb-grp">
-        <div class="sb-lbl">Patterns</div>
+        <div class="sb-lbl">Patrones</div>
         <a href="#inc"><i data-lucide="siren"></i>Incidentes</a>
         <a href="#tmln"><i data-lucide="history"></i>Timeline</a>
         <a href="#stp"><i data-lucide="footprints"></i>Stepper</a>
         <a href="#flt"><i data-lucide="filter"></i>Filter Bar</a>
       </div>
       <div class="sb-grp">
-        <div class="sb-lbl">Layouts</div>
+        <div class="sb-lbl">Maquetaciones</div>
         <a href="#nav"><i data-lucide="layout-dashboard"></i>Navegación</a>
         <a href="#map2"><i data-lucide="map"></i>Mapa UI</a>
         <a href="#dsh"><i data-lucide="bar-chart-2"></i>Dashboard</a>
@@ -92,7 +93,7 @@
 
       <div class="div"></div>
 
-      <div class="sec-group-label" id="design-tokens">Design Tokens</div>
+      <div class="sec-group-label" id="design-tokens">Tokens de Diseño</div>
 
       <section id="col" class="sec">
         <h2 class="sec-title"><i data-lucide="palette"></i> Colores</h2>
@@ -625,7 +626,7 @@
       </section>
 
       <section id="tkn" class="sec">
-        <h2 class="sec-title"><i data-lucide="code-2"></i> CSS Design Tokens</h2>
+        <h2 class="sec-title"><i data-lucide="code-2"></i> Tokens de Diseño CSS</h2>
         <p class="desc">Copia estas variables al inicio de tu proyecto para mantener consistencia en todas las apps.</p>
         <div class="sc">
           <div class="sc-code">/* ─────────────────────────────────────────── */
@@ -669,7 +670,7 @@
 
       <div class="div"></div>
 
-      <div class="sec-group-label" id="atomic-components">Atomic Components</div>
+      <div class="sec-group-label" id="atomic-components">Componentes Atómicos</div>
 
       <section id="bot" class="sec">
         <h2 class="sec-title"><i data-lucide="mouse-pointer-click"></i> Botones</h2>
@@ -782,6 +783,20 @@
             <div class="iw"><label class="il">Descripción</label><textarea class="inp" rows="3" style="resize:vertical"
                 placeholder="Descripción del incidente..."></textarea></div>
             <div class="iw"><label class="il">Hora</label><input class="inp" type="time" /></div>
+            <div class="iw">
+              <label class="il">Fecha Estándar</label>
+              <div class="inp-date-wrap">
+                <i data-lucide="calendar" class="inp-date-icon"></i>
+                <input type="date" class="inp" />
+              </div>
+            </div>
+            <div class="iw">
+              <label class="il">Fecha (con valor inicial)</label>
+              <div class="inp-date-wrap">
+                <i data-lucide="calendar-days" class="inp-date-icon"></i>
+                <input type="date" class="inp" value="2026-03-12" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -916,9 +931,10 @@
         </div>
       </section>
 
+
       <div class="div"></div>
 
-      <div class="sec-group-label" id="composite-components">Composite Components</div>
+      <div class="sec-group-label" id="composite-components">Componentes Compuestos</div>
 
       <section id="crd" class="sec">
         <h2 class="sec-title"><i data-lucide="square"></i> Cards & Stats</h2>
@@ -1328,7 +1344,7 @@
       <!-- TOOLTIP & POPOVER -->
 
       <section id="pgn" class="sec">
-        <h2 class="sec-title"><i data-lucide="ellipsis"></i> Pagination</h2>
+        <h2 class="sec-title"><i data-lucide="ellipsis"></i> Paginación</h2>
         <p class="desc">Navegación entre páginas de tablas y listados de incidentes.</p>
 
         <h3 class="sub">Estándar</h3>
@@ -1623,7 +1639,7 @@
 
       <div class="div"></div>
 
-      <div class="sec-group-label" id="patterns">Patterns</div>
+      <div class="sec-group-label" id="patterns">Patrones</div>
 
       <section id="inc" class="sec">
         <h2 class="sec-title"><i data-lucide="siren"></i> Patrón — Tarjeta de Incidente</h2>
@@ -2045,7 +2061,7 @@
 
       <div class="div"></div>
 
-      <div class="sec-group-label" id="layouts">Layouts</div>
+      <div class="sec-group-label" id="layouts">Maquetaciones</div>
 
       <section id="nav" class="sec">
         <h2 class="sec-title"><i data-lucide="layout-dashboard"></i> Navegación</h2>
@@ -2130,9 +2146,9 @@
             </div>
             <div class="tb-light-nav">
               <a href="#" class="act">Dashboard</a>
-              <a href="#">Incidentes</a>
-              <a href="#">Unidades</a>
-              <a href="#">Reportes</a>
+              <a href="#inp">Inputs</a>
+              <a href="#ale">Alertas</a>
+              <a href="#tgl">Toggle</a>
               <a href="#">Config</a>
             </div>
             <div class="tb-light-actions">

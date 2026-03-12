@@ -18,8 +18,8 @@
   /* Estilos Base e Identidad */
 
   :root {
-    --cp: #003D6B;
-    --cpd: #002749;
+    --cp: #005ea5;
+    --cpd: #003D6B;
     --cpl: #E6EEF5;
     --cs: #00C9A7;
     --csd: #00A88A;
@@ -152,8 +152,8 @@
     color: var(--g7)
   }
 
-  .bg2:hover {
-    background: var(--g1)
+  .tg2 input:checked+.tsl2 {
+    background: var(--cok)
   }
 
   .bda {
@@ -255,6 +255,55 @@
     outline: none
   }
 
+  /* DATE INPUT */
+  input[type="date"] {
+    position: relative;
+    padding-right: var(--s10)
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+    z-index: 2
+  }
+
+  .inp-date-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%
+  }
+
+  .inp-date-wrap .inp {
+    width: 100%;
+    padding-right: 38px
+  }
+
+  .inp-date-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--g5);
+    pointer-events: none;
+    z-index: 1;
+    font-size: 14px;
+    opacity: 0.8
+  }
+
+  .inp-date-wrap:focus-within .inp-date-icon {
+    color: var(--cp);
+    opacity: 1
+  }
+
   .inp:focus,
   .sel:focus {
     border-color: var(--cp);
@@ -309,6 +358,14 @@
     width: 100%;
     border-collapse: collapse;
     font-size: var(--tsm)
+  }
+
+  .tg input:checked+.tsl {
+    background: var(--cok)
+  }
+
+  .tg input:checked+.tsl::before {
+    transform: translateX(20px)
   }
 
   thead th {
@@ -397,6 +454,7 @@
     padding: 1px 6px;
     border-radius: var(--rfl);
   }
+
 </style>
 
 <!-- 2. Tailwind Config (Para clases utilitarias ilimitadas) -->
@@ -406,7 +464,7 @@
     theme: {
       extend: {
         colors: {
-          primary: { DEFAULT: '#003D6B', dark: '#002749', light: '#E6EEF5' },
+          primary: { DEFAULT: '#005ea5', dark: '#003D6B', light: '#E6EEF5' },
           secondary: { DEFAULT: '#00C9A7', dark: '#00A88A', light: '#E0FAF5' },
           accent: '#F5A623', danger: '#E03E3E', warning: '#F5A623', success: '#27AE60', info: '#2F80ED',
           gray: { 900: '#1A1A2E', 800: '#2D2D44', 700: '#4A4A6A', 500: '#8888AA', 300: '#D0D5E8', 100: '#F4F6FB' },
