@@ -13,7 +13,10 @@
 
 <!-- 1. Biblioteca Maestra de Componentes (CSS Nativo Consolidado) -->
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
+
   /* Estilos Base e Identidad */
+
   :root {
     --cp: #003D6B;
     --cpd: #002749;
@@ -33,7 +36,7 @@
     --g3: #D0D5E8;
     --g1: #F4F6FB;
     --wh: #FFFFFF;
-    --f: 'Segoe UI', system-ui, sans-serif;
+    --f: 'Chivo', system-ui, sans-serif;
     --txs: 11px;
     --tsm: 13px;
     --tb: 15px;
@@ -409,10 +412,14 @@
           gray: { 900: '#1A1A2E', 800: '#2D2D44', 700: '#4A4A6A', 500: '#8888AA', 300: '#D0D5E8', 100: '#F4F6FB' },
         },
         spacing: { 's1': '4px', 's2': '8px', 's3': '12px', 's4': '16px', 's5': '20px', 's6': '24px', 's8': '32px', 's10': '40px', 's12': '48px' },
-        borderRadius: { 'sm': '4px', 'md': '8px', 'lg': '12px', 'xl': '16px', 'full': '9999px' }
+        borderRadius: { 'sm': '4px', 'md': '8px', 'lg': '12px', 'xl': '16px', 'full': '9999px' },
+        fontFamily: {
+          sans: ['Chivo', 'Segoe UI', 'system-ui', 'sans-serif'],
+        }
       }
     }
   }
+
 </script>
 
 <!-- 3. Iconos Lucide (Soporte total en GAS) -->

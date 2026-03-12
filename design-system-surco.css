@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* Design System Surco - Base CSS */
+
 
 :root{
   --cp:#003D6B;--cpd:#002749;--cpl:#E6EEF5;
   --cs:#00C9A7;--csd:#00A88A;--csl:#E0FAF5;
   --ca:#F5A623;--cd:#E03E3E;--cw:#F5A623;--cok:#27AE60;--ci:#2F80ED;
   --g9:#1A1A2E;--g8:#2D2D44;--g7:#4A4A6A;--g5:#8888AA;--g3:#D0D5E8;--g1:#F4F6FB;--wh:#FFFFFF;
-  --f:'Segoe UI',system-ui,sans-serif;
+  --f: 'Chivo', system-ui, sans-serif;
   --txs:11px;--tsm:13px;--tb:15px;--tmd:17px;--tlg:20px;--txl:24px;--t2:30px;--t3:38px;
   --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:20px;--s6:24px;--s8:32px;--s10:40px;--s12:48px;
   --rsm:4px;--rmd:8px;--rlg:12px;--rxl:16px;--rfl:9999px;

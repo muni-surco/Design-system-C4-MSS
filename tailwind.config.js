@@ -29,7 +29,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Segoe UI', 'system-ui', 'sans-serif'],
+        sans: ['Chivo', 'Segoe UI', 'system-ui', 'sans-serif'],
       },
       spacing: {
         s1: '4px',
