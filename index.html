@@ -44,7 +44,8 @@
     <div class="nav-links">
       <a href="#design-tokens">Tokens de Diseño</a>
       <a href="#atomic-components">Componentes Atómicos</a>
-      <a href="#composite-components">Componentes Compuestos</a>
+      <a href="#composite-components">Compuestos</a>
+      <a href="#advanced-components">Avanzados</a>
       <a href="#patterns">Patrones</a>
       <a href="#layouts">Maquetaciones</a>
     </div>
@@ -76,6 +77,12 @@
             <a href="#bdg"><i data-lucide="tag"></i>Badges</a>
             <a href="#avt"><i data-lucide="circle-user"></i>Avatares</a>
             <a href="#inp"><i data-lucide="text-cursor-input"></i>Inputs</a>
+            <a href="#drp"><i data-lucide="calendar-range"></i>Date Range</a>
+            <a href="#msel"><i data-lucide="list-checks"></i>Multiselect</a>
+            <a href="#asel"><i data-lucide="search-code"></i>Autocomplete</a>
+            <a href="#upld"><i data-lucide="upload-cloud"></i>Upload</a>
+            <a href="#sig"><i data-lucide="pen-tool"></i>Signature</a>
+            <a href="#val"><i data-lucide="check-circle-2"></i>Validaciones</a>
             <a href="#ale"><i data-lucide="triangle-alert"></i>Alertas</a>
             <a href="#tgl"><i data-lucide="toggle-right"></i>Toggle</a>
           </div>
@@ -121,6 +128,7 @@
           <div class="acc-body open">
             <a href="#nav"><i data-lucide="layout-dashboard"></i>Navegación</a>
             <a href="#map2"><i data-lucide="map"></i>Mapa UI</a>
+            <a href="#stw"><i data-lucide="bar-chart-3"></i>Widgets</a>
             <a href="#dsh"><i data-lucide="bar-chart-2"></i>Dashboard</a>
           </div>
         </div>
@@ -832,6 +840,8 @@ Proyecto a construir: [describe aquí tu nueva app]</pre>
 
       <section id="inp" class="sec">
         <h2 class="sec-title"><i data-lucide="text-cursor-input"></i> Inputs & Forms</h2>
+
+        <h3 class="sub">Inputs Estándar</h3>
         <div class="sc">
           <div class="sc-c flex g4 fw is">
             <div class="iw"><label class="il">Nombre Agente <span>*</span></label><input class="inp" type="text"
@@ -840,6 +850,7 @@ Proyecto a construir: [describe aquí tu nueva app]</pre>
                 <option>Seleccionar...</option>
                 <option>Zona Norte</option>
                 <option>Zona Sur</option>
+                <option>Zona Centro</option>
                 <option>Zona Centro</option>
               </select></div>
             <div class="iw"><label class="il">DNI <span>*</span></label><input class="inp err" type="text"
@@ -867,6 +878,108 @@ Proyecto a construir: [describe aquí tu nueva app]</pre>
             </div>
           </div>
         </div>
+
+        <h3 class="sub" id="drp">Date Range Picker</h3>
+        <div class="sc">
+          <div class="sc-c" style="padding:var(--s5)">
+            <div class="iw">
+              <label class="il">Rango de fechas de reporte</label>
+              <div class="drp-wrap">
+                <i data-lucide="calendar" style="width:16px;color:var(--g5)"></i>
+                <input type="text" class="drp-input" placeholder="01/01/2026">
+                <span class="drp-sep">→</span>
+                <input type="text" class="drp-input" placeholder="31/01/2026">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub" id="msel">Multiselect & Autocomplete</h3>
+        <div class="sc">
+          <div class="sc-c flex g5 fw" style="padding:var(--s5)">
+            <div style="flex:1;min-width:280px">
+              <label class="il">Multiselect con Tags</label>
+              <div class="sel-adv-wrap" id="ms-demo">
+                <div class="sel-adv-trigger">
+                  <div class="sel-adv-tags"></div>
+                  <span class="sel-adv-placeholder">Seleccionar zonas...</span>
+                </div>
+                <div class="sel-adv-dropdown">
+                  <div class="sel-adv-search"><input type="text" placeholder="Buscar zona..."></div>
+                  <div class="sel-adv-opts"></div>
+                </div>
+              </div>
+            </div>
+            <div style="flex:1;min-width:280px" id="asel">
+              <label class="il">Autocomplete Select</label>
+              <div class="sel-adv-wrap" id="as-demo">
+                <div class="sel-adv-trigger">
+                  <div class="sel-adv-tags"></div>
+                  <span class="sel-adv-placeholder">Buscar agente por nombre...</span>
+                </div>
+                <div class="sel-adv-dropdown">
+                  <div class="sel-adv-search"><input type="text" placeholder="Escribe nombre..."></div>
+                  <div class="sel-adv-opts"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub" id="upld">File Upload</h3>
+        <div class="sc">
+          <div class="sc-c" style="flex-direction:column;gap:var(--s5);padding:var(--s5)">
+            <div class="upld-zone" id="upld-demo">
+              <div class="upld-icon"><i data-lucide="upload"></i></div>
+              <div>
+                <div class="upld-title">Haz clic o arrastra archivos aquí</div>
+                <div class="upld-text">Soporta imágenes, PDF y documentos (Máx. 10MB)</div>
+              </div>
+            </div>
+            <div class="upld-list">
+              <div class="upld-item">
+                <div class="upld-icon" style="width:36px;height:36px;background:var(--cpl);color:var(--cpd)"><i
+                    data-lucide="file-text" style="width:18px"></i></div>
+                <div class="upld-item-info">
+                  <div class="upld-item-name">reporte_incidente_surco.pdf</div>
+                  <div class="upld-item-size">2.4 MB · Completado</div>
+                  <div class="upld-progress">
+                    <div class="upld-progress-bar" style="width:100%"></div>
+                  </div>
+                </div>
+                <button class="btn bo bsm" style="padding:4px">✕</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub" id="sig">Signature Pad</h3>
+        <div class="sc">
+          <div class="sc-c" style="padding:var(--s5)">
+            <div class="sig-pad-wrap" id="sig-demo" style="width:100%;max-width:400px">
+              <canvas class="sig-canvas" width="400" height="180"></canvas>
+              <div class="sig-actions">
+                <button class="btn bg2 bsm sig-clear">Limpiar Firma</button>
+                <button class="btn bp bsm"
+                  onclick="showToast('Guardado', 'La firma se ha registrado correctamente.', 'success')">Guardar
+                  Firma</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub" id="val">Validación de Campos</h3>
+        <div class="sc">
+          <div class="sc-c" style="flex-direction:column;gap:var(--s4);padding:var(--s5)">
+            <div class="iw">
+              <label class="il">Manejo de Errores</label>
+              <input type="text" class="inp is-invalid" value="Juan" placeholder="Ingresa nombre completo">
+              <div class="invalid-feedback"><i data-lucide="alert-circle" style="width:12px"></i> El nombre debe tener
+                al menos 10 caracteres.</div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
       <section id="ale" class="sec">
@@ -2296,7 +2409,7 @@ Proyecto a construir: [describe aquí tu nueva app]</pre>
       <section id="dsh" class="sec">
         <h2 class="sec-title"><i data-lucide="bar-chart-2"></i> Patrón — Dashboard Operaciones</h2>
         <div class="sc">
-          <div class="sc-c" style="flex-direction:column;gap:var(--s5);padding:var(--s6)">
+          <div class="sc-c" style="flex-direction:column;gap:var(--s5);padding:var(--s6);align-items:stretch">
             <div class="flex g4 fw">
               <div class="sc2" style="flex:1;min-width:140px">
                 <div class="si t"><i data-lucide="siren"
@@ -2381,6 +2494,134 @@ Proyecto a construir: [describe aquí tu nueva app]</pre>
                 </div>
               </div>
             </div>
+            <div class="flex g4 is">
+              <div class="card" style="flex:2;min-width:320px">
+                <div class="ch2"><span class="cht">Historial Detallado de Turno</span><button
+                    class="btn bo bsm">Exportar</button></div>
+                <div class="cb" style="padding:0">
+                  <div class="tw wf" style="border:none;border-radius:0">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Hora</th>
+                          <th>Evento / Actividad</th>
+                          <th>Agente</th>
+                          <th>Estado</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>08:45</td>
+                          <td>Patrullaje Preventivo — Sector 4</td>
+                          <td>J. Pérez</td>
+                          <td><span class="bdg dok"><span class="dot"></span>Normal</span></td>
+                        </tr>
+                        <tr>
+                          <td>08:12</td>
+                          <td>Atención Incidente #2026-0041</td>
+                          <td>M. López</td>
+                          <td><span class="bdg dinf"><span class="dot"></span>En proceso</span></td>
+                        </tr>
+                        <tr>
+                          <td>07:55</td>
+                          <td>Cambio de unidad — Central</td>
+                          <td>C. Ríos</td>
+                          <td><span class="bdg dnt"><span class="dot"></span>Finalizado</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="cf">Ver historial completo →</div>
+              </div>
+              <div class="card" style="flex:1;min-width:280px">
+                <div class="ch2"><span class="cht">Reporte Rápido de Incidente</span></div>
+                <div class="cb" style="display:flex;flex-direction:column;gap:var(--s3)">
+                  <div class="iw"><label class="il">Tipo de Incidente</label>
+                    <select class="sel">
+                      <option>Robo / Asalto</option>
+                      <option>Accidente de Tránsito</option>
+                      <option>Ruidos Molestos</option>
+                      <option>Otros</option>
+                    </select>
+                  </div>
+                  <div class="iw"><label class="il">Ubicación aproximada</label>
+                    <input class="inp" type="text" placeholder="Calle, Av. o Referencia">
+                  </div>
+                  <div class="iw"><label class="il">Prioridad</label>
+                    <div class="flex g2">
+                      <label class="tgw" style="flex:1"><input type="radio" name="prio" checked /> Alta</label>
+                      <label class="tgw" style="flex:1"><input type="radio" name="prio" /> Media</label>
+                    </div>
+                  </div>
+                  <button class="btn bp bmd wf" style="margin-top:var(--s2)">Registrar Incidente</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="stw" class="sec">
+        <h2 class="sec-title"><i data-lucide="bar-chart-3"></i> Widgets Estadísticos</h2>
+        <div class="sc">
+          <div class="sc-c flex g4 fw" style="padding:var(--s5)">
+            <div class="stat-card" style="flex:1;min-width:240px">
+              <div class="stat-header">
+                <div class="stat-title">Distribución de Recursos</div>
+              </div>
+              <div class="stat-donut-wrap">
+                <div class="stat-donut"
+                  style="background: conic-gradient(var(--cp) 0% 45%, var(--cs) 45% 75%, var(--ca) 75% 100%)">
+                  <div class="stat-donut-val">100%</div>
+                </div>
+                <div class="stat-legend">
+                  <div class="stat-leg-item"><span class="stat-dot" style="background:var(--cp)"></span> Serenos</div>
+                  <div class="stat-leg-item"><span class="stat-dot" style="background:var(--cs)"></span> Tránsito</div>
+                  <div class="stat-leg-item"><span class="stat-dot" style="background:var(--ca)"></span> Otros</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stat-card" style="flex:1;min-width:240px">
+              <div class="stat-header">
+                <div class="stat-title">Tendencia de Reportes</div>
+                <span class="str up">↑ 8%</span>
+              </div>
+              <svg class="stat-line-svg" viewBox="0 0 200 40">
+                <path class="stat-line-area"
+                  d="M0,40 L0,30 C20,25 40,35 60,20 C80,5 100,25 120,15 C140,5 160,20 180,10 C200,0 200,0 200,40 Z">
+                </path>
+                <path class="stat-line-path"
+                  d="M0,30 C20,25 40,35 60,20 C80,5 100,25 120,15 C140,5 160,20 180,10 C200,0 200,0"></path>
+              </svg>
+            </div>
+
+            <div class="stat-card" style="flex:1;min-width:240px">
+              <div class="stat-header">
+                <div class="stat-title">Estado de Flota</div>
+              </div>
+              <div class="stat-h-bars">
+                <div class="stat-h-item">
+                  <div class="stat-h-label"><span>Operativos</span><span>85%</span></div>
+                  <div class="stat-h-track">
+                    <div class="stat-h-progress" style="width:85%;background:var(--cok)"></div>
+                  </div>
+                </div>
+                <div class="stat-h-item">
+                  <div class="stat-h-label"><span>Mantenimiento</span><span>10%</span></div>
+                  <div class="stat-h-track">
+                    <div class="stat-h-progress" style="width:10%;background:var(--ca)"></div>
+                  </div>
+                </div>
+                <div class="stat-h-item">
+                  <div class="stat-h-label"><span>Fuera de Servicio</span><span>5%</span></div>
+                  <div class="stat-h-track">
+                    <div class="stat-h-progress" style="width:5%;background:var(--cd)"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -2392,6 +2633,19 @@ Proyecto a construir: [describe aquí tu nueva app]</pre>
   <script src="design-system-surco.js"></script>
 
   <script>
+    // Inicializar componentes avanzados al cargar
+    window.addEventListener('DOMContentLoaded', () => {
+      initSignaturePad('sig-demo');
+
+      initAdvSelect('ms-demo', [
+        'Zona Norte', 'Zona Sur', 'Zona Centro', 'Zona Este', 'Zona Oeste', 'Sectores Críticos', 'Áreas Verdes'
+      ], true);
+
+      initAdvSelect('as-demo', [
+        'Juan Pérez', 'María López', 'Carlos Ríos', 'Ana Delgado', 'Roberto Soto', 'Elena Machuca', 'Diego Torres'
+      ], false);
+    });
+
     function copyPrompt() {
       const text = document.getElementById('prompt-guide-text').innerText;
       navigator.clipboard.writeText(text).then(() => {

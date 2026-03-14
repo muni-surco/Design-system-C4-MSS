@@ -60,6 +60,13 @@ var COMPONENTS=[
   {id:'ttp', name:'Tooltip Popover',   desc:'Informacion contextual al hover o al clic',      tag:'Componente', icon:'message-circle'},
   {id:'tst', name:'Toast Notificacion',desc:'Alertas emergentes con slide-in y cierre',       tag:'Componente', icon:'bell'},
   {id:'pgn', name:'Paginacion',        desc:'Navegacion de paginas con ellipsis',             tag:'Componente', icon:'ellipsis'},
+  {id:'upld',name:'File Upload',       desc:'Zona de carga de archivos con drag & drop',      tag:'Componente', icon:'upload-cloud'},
+  {id:'drp', name:'Date Range',        desc:'Selector de rango de fechas con dos inputs',     tag:'Componente', icon:'calendar-range'},
+  {id:'val', name:'Validaciones',      desc:'Manejo de errores y estados de formularios',     tag:'Componente', icon:'check-circle-2'},
+  {id:'stw', name:'Widgets Stats',      desc:'Graficos estadisticos simples y KPIs',           tag:'Avanzado',   icon:'bar-chart-3'},
+  {id:'sig', name:'Signature Pad',     desc:'Panel de firma digital con canvas',              tag:'Componente', icon:'pen-tool'},
+  {id:'msel',name:'Multiselect',       desc:'Seleccion multiple con tags y busqueda',         tag:'Componente', icon:'list-checks'},
+  {id:'asel',name:'Autocomplete',      desc:'Select con busqueda y autocompletado',           tag:'Componente', icon:'search-code'},
   {id:'inc', name:'Incidentes',        desc:'Tarjeta de incidente con prioridad y agente',    tag:'Patron',     icon:'siren'},
   {id:'tmln',name:'Timeline',          desc:'Historial cronologico de eventos de un caso',    tag:'Patron',     icon:'history'},
   {id:'stp', name:'Stepper',           desc:'Flujo paso a paso horizontal y vertical',        tag:'Patron',     icon:'footprints'},
@@ -220,3 +227,100 @@ window.addEventListener('DOMContentLoaded',function(){
   },{passive:true});
   setAct(getAct());
 });
+
+// ─── ADVANCED COMPONENTS LOGIC ─────────────────────────────
+
+// 1. Signature Pad
+function initSignaturePad(id) {
+  const wrap = document.getElementById(id);
+  if (!wrap) return;
+  const canvas = wrap.querySelector('canvas');
+  const clearBtn = wrap.querySelector('.sig-clear');
+  const ctx = canvas.getContext('2d');
+  let drawing = false;
+
+  function getPos(e) {
+    const rect = canvas.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    return { x: clientX - rect.left, y: clientY - rect.top };
+  }
+
+  function start(e) { drawing = true; ctx.beginPath(); const p = getPos(e); ctx.moveTo(p.x, p.y); }
+  function move(e) { if (!drawing) return; e.preventDefault(); const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); }
+  function stop() { drawing = false; }
+
+  ctx.strokeStyle = '#003D6B'; ctx.lineWidth = 2; ctx.lineCap = 'round';
+  canvas.addEventListener('mousedown', start); canvas.addEventListener('mousemove', move); window.addEventListener('mouseup', stop);
+  canvas.addEventListener('touchstart', start); canvas.addEventListener('touchmove', move); window.addEventListener('touchend', stop);
+  if (clearBtn) clearBtn.onclick = () => ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+// 2. Multiselect / Autocomplete Select
+window.advSelectStates = window.advSelectStates || {};
+
+window.removeTag = (id, idx) => {
+  if (window.advSelectStates[id]) window.advSelectStates[id].remove(idx);
+};
+
+window.selectOpt = (id, val) => {
+  if (window.advSelectStates[id]) window.advSelectStates[id].select(val);
+};
+
+function initAdvSelect(id, options, isMulti = false) {
+  const wrap = document.getElementById(id);
+  if (!wrap) return;
+  const trigger = wrap.querySelector('.sel-adv-trigger');
+  const searchInp = wrap.querySelector('.sel-adv-search input');
+  const list = wrap.querySelector('.sel-adv-opts');
+  const tagsWrap = wrap.querySelector('.sel-adv-tags');
+  const placeholder = wrap.querySelector('.sel-adv-placeholder');
+  
+  let selected = [];
+
+  function update() {
+    if (placeholder) placeholder.style.display = selected.length ? 'none' : 'block';
+    if (tagsWrap) {
+      tagsWrap.innerHTML = selected.map((val, idx) => `
+        <span class="sel-tag">${val} <span class="sel-tag-x" onclick="event.stopPropagation(); removeTag('${id}', ${idx})">×</span></span>
+      `).join('');
+    }
+    renderOptions(searchInp.value);
+  }
+
+  function renderOptions(filter = '') {
+    const q = filter.toLowerCase();
+    const filtered = options.filter(o => o.toLowerCase().includes(q));
+    list.innerHTML = filtered.map(o => `
+      <div class="sel-adv-opt ${selected.includes(o) ? 'selected' : ''}" onclick="selectOpt('${id}', '${o}')">${o}</div>
+    `).join('');
+  }
+
+  window.advSelectStates[id] = {
+    select: (val) => {
+      if (isMulti) {
+        const idx = selected.indexOf(val);
+        if (idx > -1) selected.splice(idx, 1); else selected.push(val);
+      } else {
+        selected = [val]; wrap.classList.remove('open');
+      }
+      update();
+    },
+    remove: (idx) => {
+      selected.splice(idx, 1);
+      update();
+    }
+  };
+
+  trigger.onclick = (e) => { 
+    e.stopPropagation(); 
+    document.querySelectorAll('.sel-adv-wrap').forEach(w => { if(w!==wrap) w.classList.remove('open')}); 
+    wrap.classList.toggle('open'); 
+    if(wrap.classList.contains('open')) searchInp.focus(); 
+  };
+  searchInp.oninput = (e) => renderOptions(e.target.value);
+  searchInp.onclick = (e) => e.stopPropagation();
+  document.addEventListener('click', () => wrap.classList.remove('open'));
+  
+  update();
+}
