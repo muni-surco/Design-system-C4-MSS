@@ -1,6 +1,43 @@
 function toggleAcc(h){var b=h.nextElementSibling,o=h.classList.contains('open');h.classList.toggle('open',!o);b.classList.toggle('open',!o);}
 function togglePop(id){var p=document.getElementById(id),o=p.classList.contains('open');document.querySelectorAll('.pop-box').forEach(function(x){x.classList.remove('open');});if(!o)p.classList.add('open');}
 
+function showToast(title, msg, type = 'info') {
+  let container = document.getElementById('toast-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'toast-container';
+    document.body.appendChild(container);
+  }
+
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+  
+  const iconMap = {
+    'success': 'circle-check', 'danger': 'siren', 'warning': 'triangle-alert', 'info': 'info'
+  };
+  const colorMap = {
+    'success': 'var(--cok)', 'danger': 'var(--cd)', 'warning': 'var(--cw)', 'info': 'var(--ci)'
+  };
+
+  toast.innerHTML = `
+    <div class="toast-icon"><i data-lucide="${iconMap[type]}" style="width:20px;height:20px;stroke:${colorMap[type]};stroke-width:2;fill:none"></i></div>
+    <div class="toast-body">
+      <div class="toast-title">${title}</div>
+      <div class="toast-msg">${msg}</div>
+    </div>
+    <button class="toast-close">×</button>
+  `;
+
+  container.appendChild(toast);
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+
+  // Auto-dismiss after 4s
+  setTimeout(() => {
+    toast.style.cssText += 'opacity:0;transform:translateX(40px);transition:.25s';
+    setTimeout(() => { if(toast.parentNode) toast.remove(); }, 260);
+  }, 4000);
+}
+
 var COMPONENTS=[
   {id:'col', name:'Colores',           desc:'Paleta de marca, estados y neutros',             tag:'Fundamentos',icon:'palette'},
   {id:'tip', name:'Tipografia',        desc:'Escala de texto, pesos y familia tipografica',   tag:'Fundamentos',icon:'type'},

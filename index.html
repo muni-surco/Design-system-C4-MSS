@@ -47,7 +47,6 @@
       <a href="#composite-components">Componentes Compuestos</a>
       <a href="#patterns">Patrones</a>
       <a href="#layouts">Maquetaciones</a>
-      <a href="#cal">Calendario</a>
     </div>
   </nav>
   <div class="layout">
@@ -128,6 +127,37 @@
       </div>
     </aside>
     <main class="main">
+
+      <section class="sec"
+        style="background:var(--wh); border: 1px solid var(--g3); border-radius: var(--rlg); padding: var(--s5); box-shadow: var(--shmd); margin-bottom: var(--s8);">
+        <div
+          style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--s4); flex-wrap: wrap; gap: var(--s3);">
+          <div style="display: flex; align-items: center; gap: var(--s3);">
+            <div
+              style="background: var(--cpl); color: var(--cp); width: 36px; height: 36px; border-radius: var(--rmd); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i data-lucide="terminal" style="width:20px;height:20px;"></i>
+            </div>
+            <div>
+              <h3 style="margin: 0; font-size: var(--tmd); font-weight: 700; color: var(--g9);">Prompt Guía para IA</h3>
+              <p class="desc" style="margin: 0; color: var(--g7); font-size: var(--txs);">Copia este prompt para iniciar
+                nuevos proyectos con estas reglas estrictas.</p>
+            </div>
+          </div>
+          <button class="btn bp bsm" onclick="copyPrompt()" style="box-shadow: var(--shsm);">
+            <i data-lucide="copy" style="width:14px;height:14px;"></i> Copiar Prompt
+          </button>
+        </div>
+        <div
+          style="background: #1E1E2E; border-radius: var(--rmd); position: relative; overflow: hidden; border: 1px solid var(--g8);">
+          <pre id="prompt-guide-text"
+            style="color: #A6E3A1; font-family: monospace; font-size: 13px; padding: var(--s5); margin: 0; white-space: pre-wrap; line-height: 1.5;">Antes de empezar, analiza mi design system en:
+https://muni-surco.github.io/Design-system-C4-MSS/
+
+Extrae tokens de color, tipografía (Chivo), espaciados, íconos, componentes y patrones visuales. Úsalos como guía estricta para todo lo que construyamos. No uses otros estilos ni componentes externos que no estén en el design system.
+
+Proyecto a construir: [describe aquí tu nueva app]</pre>
+        </div>
+      </section>
 
       <div class="div"></div>
 
@@ -2361,6 +2391,16 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script src="design-system-surco.js"></script>
 
+  <script>
+    function copyPrompt() {
+      const text = document.getElementById('prompt-guide-text').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Copiado', 'El prompt guía se ha copiado al portapapeles.', 'success');
+      }).catch(err => {
+        showToast('Error', 'No se pudo copiar el texto.', 'danger');
+      });
+    }
+  </script>
 </body>
 
 </html>
