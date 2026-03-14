@@ -2406,8 +2406,72 @@ Proyecto a construir: [describe aquí tu nueva app]</pre>
         </div>
       </section>
 
+      <section id="stw" class="sec">
+        <h2 class="sec-title"><i data-lucide="bar-chart-3"></i> Widgets Estadísticos</h2>
+        <div class="sc">
+          <div class="sc-c flex g4 fw" style="padding:var(--s5)">
+            <div class="stat-card" style="flex:1;min-width:240px">
+              <div class="stat-header">
+                <div class="stat-title">Distribución de Recursos</div>
+              </div>
+              <div class="stat-donut-wrap">
+                <div class="stat-donut"
+                  style="background: conic-gradient(var(--cp) 0% 45%, var(--cs) 45% 75%, var(--ca) 75% 100%)">
+                  <div class="stat-donut-val">100%</div>
+                </div>
+                <div class="stat-legend">
+                  <div class="stat-leg-item"><span class="stat-dot" style="background:var(--cp)"></span> Serenos</div>
+                  <div class="stat-leg-item"><span class="stat-dot" style="background:var(--cs)"></span> Tránsito</div>
+                  <div class="stat-leg-item"><span class="stat-dot" style="background:var(--ca)"></span> Otros</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stat-card" style="flex:1;min-width:240px">
+              <div class="stat-header">
+                <div class="stat-title">Tendencia de Reportes</div>
+                <span class="str up">↑ 8%</span>
+              </div>
+              <svg class="stat-line-svg" viewBox="0 0 200 40">
+                <path class="stat-line-area"
+                  d="M0,40 L0,30 C20,25 40,35 60,20 C80,5 100,25 120,15 C140,5 160,20 180,10 C200,0 200,0 200,40 Z">
+                </path>
+                <path class="stat-line-path"
+                  d="M0,30 C20,25 40,35 60,20 C80,5 100,25 120,15 C140,5 160,20 180,10 C200,0 200,0"></path>
+              </svg>
+            </div>
+
+            <div class="stat-card" style="flex:1;min-width:240px">
+              <div class="stat-header">
+                <div class="stat-title">Estado de Flota</div>
+              </div>
+              <div class="stat-h-bars">
+                <div class="stat-h-item">
+                  <div class="stat-h-label"><span>Operativos</span><span>85%</span></div>
+                  <div class="stat-h-track">
+                    <div class="stat-h-progress" style="width:85%;background:var(--cok)"></div>
+                  </div>
+                </div>
+                <div class="stat-h-item">
+                  <div class="stat-h-label"><span>Mantenimiento</span><span>10%</span></div>
+                  <div class="stat-h-track">
+                    <div class="stat-h-progress" style="width:10%;background:var(--ca)"></div>
+                  </div>
+                </div>
+                <div class="stat-h-item">
+                  <div class="stat-h-label"><span>Fuera de Servicio</span><span>5%</span></div>
+                  <div class="stat-h-track">
+                    <div class="stat-h-progress" style="width:5%;background:var(--cd)"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="dsh" class="sec">
-        <h2 class="sec-title"><i data-lucide="bar-chart-2"></i> Patrón — Dashboard Operaciones</h2>
+        <h2 class="sec-title"><i data-lucide="bar-chart-2"></i>Dashboard Operaciones</h2>
         <div class="sc">
           <div class="sc-c" style="flex-direction:column;gap:var(--s5);padding:var(--s6);align-items:stretch">
             <div class="flex g4 fw">
@@ -2555,70 +2619,6 @@ Proyecto a construir: [describe aquí tu nueva app]</pre>
                     </div>
                   </div>
                   <button class="btn bp bmd wf" style="margin-top:var(--s2)">Registrar Incidente</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="stw" class="sec">
-        <h2 class="sec-title"><i data-lucide="bar-chart-3"></i> Widgets Estadísticos</h2>
-        <div class="sc">
-          <div class="sc-c flex g4 fw" style="padding:var(--s5)">
-            <div class="stat-card" style="flex:1;min-width:240px">
-              <div class="stat-header">
-                <div class="stat-title">Distribución de Recursos</div>
-              </div>
-              <div class="stat-donut-wrap">
-                <div class="stat-donut"
-                  style="background: conic-gradient(var(--cp) 0% 45%, var(--cs) 45% 75%, var(--ca) 75% 100%)">
-                  <div class="stat-donut-val">100%</div>
-                </div>
-                <div class="stat-legend">
-                  <div class="stat-leg-item"><span class="stat-dot" style="background:var(--cp)"></span> Serenos</div>
-                  <div class="stat-leg-item"><span class="stat-dot" style="background:var(--cs)"></span> Tránsito</div>
-                  <div class="stat-leg-item"><span class="stat-dot" style="background:var(--ca)"></span> Otros</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="stat-card" style="flex:1;min-width:240px">
-              <div class="stat-header">
-                <div class="stat-title">Tendencia de Reportes</div>
-                <span class="str up">↑ 8%</span>
-              </div>
-              <svg class="stat-line-svg" viewBox="0 0 200 40">
-                <path class="stat-line-area"
-                  d="M0,40 L0,30 C20,25 40,35 60,20 C80,5 100,25 120,15 C140,5 160,20 180,10 C200,0 200,0 200,40 Z">
-                </path>
-                <path class="stat-line-path"
-                  d="M0,30 C20,25 40,35 60,20 C80,5 100,25 120,15 C140,5 160,20 180,10 C200,0 200,0"></path>
-              </svg>
-            </div>
-
-            <div class="stat-card" style="flex:1;min-width:240px">
-              <div class="stat-header">
-                <div class="stat-title">Estado de Flota</div>
-              </div>
-              <div class="stat-h-bars">
-                <div class="stat-h-item">
-                  <div class="stat-h-label"><span>Operativos</span><span>85%</span></div>
-                  <div class="stat-h-track">
-                    <div class="stat-h-progress" style="width:85%;background:var(--cok)"></div>
-                  </div>
-                </div>
-                <div class="stat-h-item">
-                  <div class="stat-h-label"><span>Mantenimiento</span><span>10%</span></div>
-                  <div class="stat-h-track">
-                    <div class="stat-h-progress" style="width:10%;background:var(--ca)"></div>
-                  </div>
-                </div>
-                <div class="stat-h-item">
-                  <div class="stat-h-label"><span>Fuera de Servicio</span><span>5%</span></div>
-                  <div class="stat-h-track">
-                    <div class="stat-h-progress" style="width:5%;background:var(--cd)"></div>
-                  </div>
                 </div>
               </div>
             </div>
