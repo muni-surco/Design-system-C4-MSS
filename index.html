@@ -45,7 +45,6 @@
       <a href="#design-tokens">Tokens de Diseño</a>
       <a href="#atomic-components">Componentes Atómicos</a>
       <a href="#composite-components">Compuestos</a>
-      <a href="#advanced-components">Avanzados</a>
       <a href="#patterns">Patrones</a>
       <a href="#layouts">Maquetaciones</a>
     </div>
@@ -1598,24 +1597,44 @@ Proyecto a construir: [describe aquí tu nueva app]</pre>
       <section id="mod" class="sec">
         <h2 class="sec-title"><i data-lucide="app-window"></i> Modales</h2>
         <div class="sc">
-          <div class="sc-c" style="background:var(--g3);justify-content:center">
-            <div class="modal">
+          <div class="sc-c flex fw g5" style="background:var(--g3);justify-content:center;padding:var(--s10) var(--s5)">
+            <!-- Modal Estándar -->
+            <div class="modal" style="flex:1;min-width:320px;max-width:440px">
               <div class="mh">
-                <h4 style="display:flex;align-items:center;gap:var(--s2)"><i data-lucide="siren"
-                    style="width:18px;height:18px;stroke:white;stroke-width:2;fill:none;flex-shrink:0"></i>Nuevo
-                  Incidente</h4><button class="mc">✕</button>
+                <h4 style="display:flex;align-items:center;gap:var(--s2)"><i data-lucide="app-window"
+                    style="width:18px;height:18px;stroke:white;stroke-width:2;fill:none;flex-shrink:0"></i>Modal Estándar
+                </h4><button class="mc">✕</button>
               </div>
               <div class="mb">
                 <div style="display:flex;flex-direction:column;gap:var(--s4)">
-                  <div class="iw"><label class="il">Tipo <span>*</span></label><select class="sel">
-                      <option>Robo a transeúnte</option>
-                      <option>Vehículo sospechoso</option>
+                  <div class="iw"><label class="il">Título del Campo</label><input class="inp" type="text"
+                      placeholder="Ingrese información..." /></div>
+                  <div class="iw"><label class="il">Selección <span>*</span></label><select class="sel">
+                      <option>Opción 1</option>
+                      <option>Opción 2</option>
                     </select></div>
-                  <div class="iw"><label class="il">Dirección <span>*</span></label><input class="inp" type="text"
-                      placeholder="Ej: Av. Primavera 1234" /></div>
                 </div>
               </div>
-              <div class="mf"><button class="btn bg2 bmd">Cancelar</button><button class="btn bp bmd">Registrar</button>
+              <div class="mf"><button class="btn bg2 bmd">Cerrar</button><button class="btn bp bmd">Guardar</button>
+              </div>
+            </div>
+
+            <!-- Modal de Confirmación -->
+            <div class="modal" style="flex:1;min-width:320px;max-width:440px">
+              <div class="mh" style="background:var(--cd)">
+                <h4 style="display:flex;align-items:center;gap:var(--s2)"><i data-lucide="triangle-alert"
+                    style="width:18px;height:18px;stroke:white;stroke-width:2;fill:none;flex-shrink:0"></i>Confirmar
+                  Eliminación</h4><button class="mc">✕</button>
+              </div>
+              <div class="mb">
+                <p style="font-size:var(--tsm);color:var(--g7);line-height:1.5">Usted está a punto de eliminar el
+                  registro <strong>#2026-0041</strong>. Esta acción es irreversible.</p>
+                <p style="font-size:var(--tsm);font-weight:600;color:var(--g9);margin-top:var(--s4)">¿Desea continuar con
+                  la eliminación?</p>
+              </div>
+              <div class="mf">
+                <button class="btn bg2 bmd">Cancelar</button>
+                <button class="btn bda bmd">Eliminar Registro</button>
               </div>
             </div>
           </div>
