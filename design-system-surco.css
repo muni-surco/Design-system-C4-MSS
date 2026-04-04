@@ -45,9 +45,10 @@
   --rlg: 12px;
   --rxl: 16px;
   --rfl: 9999px;
-  --shsm: 0 1px 3px rgba(0, 0, 0, .08);
-  --shmd: 0 4px 12px rgba(0, 0, 0, .10);
-  --shlg: 0 8px 24px rgba(0, 0, 0, .12);
+  --trans-smooth: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  --shsm: 0 2px 8px rgba(0, 0, 0, .04);
+  --shmd: 0 12px 30px rgba(0, 0, 0, .06);
+  --shlg: 0 20px 40px rgba(0, 0, 0, .08);
 }
 
 *,
@@ -63,7 +64,12 @@ body {
   background: var(--g1);
   color: var(--g9);
   font-size: var(--tb);
-  line-height: 1.6
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3, .sec-title, .sub {
+  letter-spacing: -0.02em;
 }
 
 a {
@@ -116,7 +122,7 @@ a {
   background: rgba(255, 255, 255, .1);
   color: var(--wh);
   outline: none;
-  transition: all .2s;
+  transition: var(--trans-smooth);
   caret-color: var(--cp)
 }
 
@@ -351,7 +357,7 @@ a {
   color: var(--g7);
   font-size: var(--tsm);
   padding: var(--s2) var(--s4);
-  transition: background .15s, color .15s;
+  transition: var(--trans-smooth);
   border-left: 3px solid transparent;
   font-weight: 500
 }
@@ -436,9 +442,15 @@ a {
 
 .sc {
   background: var(--wh);
-  border: 1px solid var(--g3);
+  border: 1px solid rgba(208, 213, 232, 0.4);
   border-radius: var(--rlg);
-  margin-bottom: var(--s4)
+  margin-bottom: var(--s4);
+  transition: var(--trans-smooth);
+}
+
+.sc:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shmd);
 }
 
 .sc-c {
@@ -524,7 +536,7 @@ a {
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: filter .15s, transform .1s;
+  transition: var(--trans-smooth);
   border-radius: var(--rmd)
 }
 
@@ -698,17 +710,18 @@ a {
   font-size: var(--tsm);
   padding: 9px 12px;
   border-radius: var(--rmd);
-  border: 1.5px solid var(--g3);
-  background: var(--wh);
+  border: 1.5px solid transparent;
+  background: var(--g1);
   color: var(--g9);
-  transition: .2s;
+  transition: var(--trans-smooth);
   outline: none
 }
 
 .inp:focus,
 .sel:focus {
+  background: var(--wh);
   border-color: var(--cp);
-  box-shadow: 0 0 0 3px rgba(0, 201, 167, .18)
+  box-shadow: 0 0 0 4px rgba(0, 201, 167, .12)
 }
 
 .inp.err {
