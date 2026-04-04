@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..700;1,100..700&display=swap');
 
 /* Design System Surco - Base CSS */
 
@@ -922,7 +922,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .sv {
   font-size: var(--t2);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--g9);
   line-height: 1
 }
@@ -2734,7 +2734,7 @@ tbody tr:last-child td {
 
 .sec-group-label {
   font-size: var(--txs);
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.2px;
   color: var(--g5);
@@ -2964,7 +2964,7 @@ tbody tr:last-child td {
   position: relative;
   z-index: 2;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--g9);
 }
 .stat-legend {
