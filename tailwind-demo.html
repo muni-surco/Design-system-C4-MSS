@@ -11,14 +11,14 @@
         extend: {
           colors: {
             primary: {
+              DEFAULT: '#005ea5',
+              dark: '#003D6B',
+              light: '#E6EEF5',
+            },
+            secondary: {
               DEFAULT: '#00C9A7',
               dark: '#00A88A',
               light: '#E0FAF5',
-            },
-            secondary: {
-              DEFAULT: '#003D6B',
-              dark: '#002749',
-              light: '#E6EEF5',
             },
             accent: '#F5A623',
             danger: '#E03E3E',
@@ -35,7 +35,7 @@
             },
           },
           fontFamily: {
-            sans: ['Segoe UI', 'system-ui', 'sans-serif'],
+            sans: ['Chivo', 'Segoe UI', 'system-ui', 'sans-serif'],
           },
           spacing: {
             's1': '4px', 's2': '8px', 's3': '12px', 's4': '16px', 's5': '20px', 's6': '24px', 's8': '32px', 's10': '40px', 's12': '48px',
@@ -47,13 +47,16 @@
       }
     }
   </script>
+  <style>
+    p { font-weight: normal !important; }
+  </style>
 </head>
 <body class="bg-gray-100 font-sans p-s10">
 
   <div class="max-w-4xl mx-auto space-y-s8">
     
     <header class="text-center">
-      <h1 class="text-3xl font-bold text-secondary">Tailwind + Surco DS</h1>
+      <h1 class="text-3xl font-bold text-primary">Tailwind + Surco DS</h1>
       <p class="text-gray-500 mt-s2">Adaptación del sistema de diseño para escalabilidad.</p>
     </header>
 
